@@ -5,6 +5,8 @@ import java.sql.SQLException;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
 
+import hu.vmatthias.foxandhounds.game.Game;
+
 /**
  * Entrypoint.
  */

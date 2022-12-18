@@ -1,4 +1,4 @@
-package hu.vmatthias.foxandhounds;
+package hu.vmatthias.foxandhounds.game;
 
 import static java.lang.System.exit;
 
@@ -13,6 +13,8 @@ import javax.xml.transform.TransformerException;
 
 import hu.vmatthias.foxandhounds.data.GameRules;
 import hu.vmatthias.foxandhounds.data.Gameboard;
+import hu.vmatthias.foxandhounds.texts.FoxSelectText;
+import hu.vmatthias.foxandhounds.texts.HoundSelectText;
 import hu.vmatthias.foxandhounds.texts.WelcomeText;
 import hu.vmatthias.foxandhounds.xml.XmlLoad;
 import hu.vmatthias.foxandhounds.xml.XmlSave;
@@ -44,7 +46,7 @@ public class Game {
     public static void startGame() throws IOException, SQLException, ParserConfigurationException, TransformerException {
         ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
         WelcomeText welcometext = (WelcomeText) context.getBean("welcomeText");
-        welcometext.Welcome();
+        welcometext.welcome();
 
         // Game start
         while (!GameRules.isFoxWinTrigger() || !GameRules.isFoxLoseTrigger()) {
@@ -57,7 +59,8 @@ public class Game {
                 }
                 // HOUND TURN
                 // In this phase, you'll select your hound.
-                System.out.println("Please select your hound(R/C[0-7]");
+                HoundSelectText houndSelectText = (HoundSelectText) context.getBean("HoundSelectText");
+                houndSelectText.houndUnitSelect();
                 BufferedReader rowReader = new BufferedReader(new InputStreamReader(System.in));
                 row = Integer.parseInt(rowReader.readLine());
                 BufferedReader columnReader = new BufferedReader(new InputStreamReader(System.in));
@@ -129,7 +132,8 @@ public class Game {
                 }
 
                 // Selecting your Fox
-                System.out.println("Please select your fox(R/C[0-7]");
+                FoxSelectText foxSelectText = (FoxSelectText) context.getBean("FoxSelectText");
+                foxSelectText.foxUnitSelect();
                 BufferedReader foxRowReader = new BufferedReader(new InputStreamReader(System.in));
                 int foxRow = Integer.parseInt(foxRowReader.readLine());
                 BufferedReader foxColumnReader = new BufferedReader(new InputStreamReader(System.in));

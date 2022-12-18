@@ -1,6 +1,4 @@
-package hu.vmatthias.foxandhounds;
-
-import hu.vmatthias.foxandhounds.data.GameRules;
+package hu.vmatthias.foxandhounds.game;
 
 import static java.lang.System.exit;
 
@@ -13,6 +11,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Objects;
+
+import hu.vmatthias.foxandhounds.data.GameRules;
 
 /**
  * When Fox wins the round.

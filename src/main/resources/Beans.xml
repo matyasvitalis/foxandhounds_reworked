@@ -8,5 +8,13 @@
    <bean id = "welcomeText" class = "hu.vmatthias.foxandhounds.texts.WelcomeText">
       <property name = "text" value = "playround, save, load, exit"/>
    </bean>
-
+	
+	<bean id = "HoundSelectText" class = "hu.vmatthias.foxandhounds.texts.HoundSelectText">
+      <property name = "htext" value = "Please select your hound(R/C[0-7]"/>
+   </bean>
+   
+   <bean id = "FoxSelectText" class = "hu.vmatthias.foxandhounds.texts.FoxSelectText">
+      <property name = "ftext" value = "Please select your fox(R/C[0-7]"/>
+   </bean>
+   
 </beans>
