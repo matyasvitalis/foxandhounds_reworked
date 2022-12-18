@@ -1,4 +1,4 @@
-package hu.vmatthias.foxandhounds;
+package hu.vmatthias.foxandhounds.xml;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -13,6 +13,7 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
+import hu.vmatthias.foxandhounds.data.MapDataFromGame;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 

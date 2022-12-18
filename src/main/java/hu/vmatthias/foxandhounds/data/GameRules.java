@@ -1,4 +1,4 @@
-package hu.vmatthias.foxandhounds;
+package hu.vmatthias.foxandhounds.data;
 
 /**
  * Basic rules.

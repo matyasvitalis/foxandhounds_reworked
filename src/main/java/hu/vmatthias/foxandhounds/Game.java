@@ -11,6 +11,14 @@ import java.util.Scanner;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
 
+import hu.vmatthias.foxandhounds.data.GameRules;
+import hu.vmatthias.foxandhounds.data.Gameboard;
+import hu.vmatthias.foxandhounds.texts.WelcomeText;
+import hu.vmatthias.foxandhounds.xml.XmlLoad;
+import hu.vmatthias.foxandhounds.xml.XmlSave;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 /**
 * Game initialization.
  */
@@ -22,8 +30,8 @@ public class Game {
     static String freeMaze = GameRules.getFreeMaze();
     static String[][] shortTable = Gameboard.getShortTable();
     static int moveLimit = GameRules.getMoveLimit();
-    static int row = Gameboard.row;
-    static int column = Gameboard.column;
+    static int row = Gameboard.getRow();
+    static int column = Gameboard.getColumn();
     static String playround = "playround";
     static String save = "save";
     static String load = "load";
@@ -34,6 +42,9 @@ public class Game {
      */
 
     public static void startGame() throws IOException, SQLException, ParserConfigurationException, TransformerException {
+        ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
+        WelcomeText welcometext = (WelcomeText) context.getBean("welcomeText");
+        welcometext.Welcome();
 
         // Game start
         while (!GameRules.isFoxWinTrigger() || !GameRules.isFoxLoseTrigger()) {

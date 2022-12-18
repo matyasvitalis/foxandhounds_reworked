@@ -1,4 +1,4 @@
-package hu.vmatthias.foxandhounds;
+package hu.vmatthias.foxandhounds.xml;
 
 import java.io.File;
 import java.io.IOException;
@@ -7,6 +7,7 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
+import hu.vmatthias.foxandhounds.data.Gameboard;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -122,14 +123,14 @@ public class XmlLoad {
                         array7[h++] = row.split(",");
                     }
             for (int x = 0; x < 8; x++) {
-                        Gameboard.shortTable[0][x] = array0[x][0];
-                        Gameboard.shortTable[1][x] = array1[x][0];
-                        Gameboard.shortTable[2][x] = array2[x][0];
-                        Gameboard.shortTable[3][x] = array3[x][0];
-                        Gameboard.shortTable[4][x] = array4[x][0];
-                        Gameboard.shortTable[5][x] = array5[x][0];
-                        Gameboard.shortTable[6][x] = array6[x][0];
-                        Gameboard.shortTable[7][x] = array7[x][0];
+                        Gameboard.getShortTable()[0][x] = array0[x][0];
+                        Gameboard.getShortTable()[1][x] = array1[x][0];
+                        Gameboard.getShortTable()[2][x] = array2[x][0];
+                        Gameboard.getShortTable()[3][x] = array3[x][0];
+                        Gameboard.getShortTable()[4][x] = array4[x][0];
+                        Gameboard.getShortTable()[5][x] = array5[x][0];
+                        Gameboard.getShortTable()[6][x] = array6[x][0];
+                        Gameboard.getShortTable()[7][x] = array7[x][0];
                     }
                 }
             }

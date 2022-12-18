@@ -1,4 +1,4 @@
-package hu.vmatthias.foxandhounds;
+package hu.vmatthias.foxandhounds.data;
 
 import java.util.ArrayList;
 import java.util.Arrays;

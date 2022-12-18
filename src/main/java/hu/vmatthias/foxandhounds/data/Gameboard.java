@@ -1,12 +1,9 @@
-package hu.vmatthias.foxandhounds;
-
-import org.springframework.context.annotation.Bean;
+package hu.vmatthias.foxandhounds.data;
 
 /**
 *   Gameboard values, settings.
 */
 public class Gameboard {
-    @Bean
     public static String[][] getShortTable() {
         return shortTable;
     }
@@ -28,5 +25,22 @@ public class Gameboard {
     };
 
     static int row;
+
+    public static int getRow() {
+        return row;
+    }
+
+    public static void setRow(int row) {
+        Gameboard.row = row;
+    }
+
+    public static int getColumn() {
+        return column;
+    }
+
+    public static void setColumn(int column) {
+        Gameboard.column = column;
+    }
+
     static int column;
 }

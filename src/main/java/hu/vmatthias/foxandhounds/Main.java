@@ -6,7 +6,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
 
 /**
- * Program starting.
+ * Entrypoint.
  */
 public class Main {
     public static void main(String[] args) throws SQLException, IOException, ParserConfigurationException,

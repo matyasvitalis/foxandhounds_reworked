@@ -1,5 +1,7 @@
 package hu.vmatthias.foxandhounds;
 
+import hu.vmatthias.foxandhounds.data.GameRules;
+
 import static java.lang.System.exit;
 
 import java.io.BufferedReader;
@@ -18,6 +20,8 @@ import java.util.Objects;
 public class FoxWin {
         String playerName;
         int playerWinMatches;
+     String dbPlayerName = null;
+        int dbScore = 0;
 
     public FoxWin() throws SQLException, IOException {
         playerName = GameRules.getPlayerName();
@@ -31,8 +35,6 @@ public class FoxWin {
         Statement statement = connection.createStatement();
         String selectSQL = "SELECT playername, score  FROM HIGHSCORE" +
                 " WHERE playername='" + playerName + "'";
-        String dbPlayerName = null;
-        int dbScore = 0;
         ResultSet rs1 = statement.executeQuery(selectSQL);
         while (rs1.next()) {
             dbPlayerName = rs1.getString("playername");
