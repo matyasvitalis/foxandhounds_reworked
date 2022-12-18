@@ -1,10 +1,12 @@
 package hu.vmatthias.foxandhounds;
 
+import org.springframework.context.annotation.Bean;
+
 /**
 *   Gameboard values, settings.
 */
 public class Gameboard {
-
+    @Bean
     public static String[][] getShortTable() {
         return shortTable;
     }

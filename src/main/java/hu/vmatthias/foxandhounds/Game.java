@@ -15,6 +15,7 @@ import javax.xml.transform.TransformerException;
 * Game initialization.
  */
 public class Game {
+
     static String Fox = GameRules.getFox();
     static String Hound = GameRules.getHound();
     static String invalidMaze = GameRules.getInvalidMaze();

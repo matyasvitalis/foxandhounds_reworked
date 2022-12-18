@@ -13,10 +13,18 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
+/**
+ * Loading savegame from XML.
+ */
 public class XmlLoad {
-
+    /**
+     * Save file location.
+     */
     private static final String FILENAME = "d:\\javaTEMP\\save.xml";
 
+    /**
+     * Loading savegame from XML. Incorrect values will be fixed in this section.
+     */
     public static void load() {
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 
@@ -129,9 +137,5 @@ public class XmlLoad {
             throw new RuntimeException("Save file (save.xml) not exists");
         }
         System.out.println("Load success.");
-    }
-
-    public static void main(String[] args) {
-        load();
     }
 }

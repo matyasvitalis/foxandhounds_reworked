@@ -16,8 +16,13 @@ import javax.xml.transform.stream.StreamResult;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
+/**
+ * Gamesave to XML.
+ */
 public class XmlSave {
-
+    /**
+     * Gamesave to XML.
+     */
     public static void xml() throws ParserConfigurationException, TransformerException {
         DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
@@ -82,6 +87,7 @@ public class XmlSave {
 
     public static void runCommand() throws ParserConfigurationException, TransformerException {
         xml();
+        System.out.println("Save success.");
     }
     }
 
