@@ -19,6 +19,7 @@ import hu.vmatthias.foxandhounds.texts.WelcomeText;
 import hu.vmatthias.foxandhounds.xml.XmlLoad;
 import hu.vmatthias.foxandhounds.xml.XmlSave;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -178,7 +179,8 @@ public class Game {
                 // if Fox reaches Hound line
                 for (int i = 0; i <= 7; i++) {
                     if (shortTable[0][i].equals(Fox)) {
-                        new FoxWin();
+                        ApplicationContext applicationContext = new AnnotationConfigApplicationContext("hu.vmatthias.foxandhounds");
+                        FoxWin foxwin = applicationContext.getBean(FoxWin.class);
                         GameRules.setFoxWinTrigger(true);
                     }
                 }

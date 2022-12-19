@@ -13,10 +13,12 @@ import java.sql.Statement;
 import java.util.Objects;
 
 import hu.vmatthias.foxandhounds.data.GameRules;
+import org.springframework.stereotype.Service;
 
 /**
  * When Fox wins the round.
  */
+@Service
 public class FoxWin {
         String playerName;
         int playerWinMatches;
@@ -33,7 +35,7 @@ public class FoxWin {
         playerWinMatches = playerWinMatches + 1;
         Connection connection = DriverManager.getConnection("jdbc:h2:tcp://localhost/./FoxandHounds", "sa", "fox123");
         Statement statement = connection.createStatement();
-        String selectSQL = "SELECT playername, score  FROM HIGHSCORE" +
+        String selectSQL = "SELECT playername, score FROM HIGHSCORE" +
                 " WHERE playername='" + playerName + "'";
         ResultSet rs1 = statement.executeQuery(selectSQL);
         while (rs1.next()) {
